@@ -11,7 +11,20 @@
 using namespace cv;
 #ifndef GAUSSIAN_FILTER_HANDS_METHODS_H
 #define GAUSSIAN_FILTER_HANDS_METHODS_H
-Mat GaussianBlur(const Mat&, int, double);
-double** GaussianKernel(int, double);
-double KernelFunction(double, double, double);
+class GaussianBlurManager{
+public:
+    GaussianBlurManager(const Mat&);
+    Mat process();
+    void setupKernel(int, double);
+    ~GaussianBlurManager();
+private:
+    double** GaussianKernel(int, double);
+    double KernelFunction(double, double, double);
+
+private:
+    Mat Image;
+    int kernel_size;
+    double sigma;
+};
+
 #endif //GAUSSIAN_FILTER_HANDS_METHODS_H

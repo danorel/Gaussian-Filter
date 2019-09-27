@@ -8,7 +8,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(
         Gaussian-Filter main.cpp
-        hands_methods.cpp
+        gaussian_filter.cpp
 )
 
 # linking
